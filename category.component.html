@@ -1,0 +1,65 @@
+<!--<div *ngFor="let c of categoryArray" id="category">
+  id.{{c.id}} name.{{c.name}}
+
+</div>-->
+<!--<form>
+  <fieldset>
+    <label (mouseout)="changeColorCategoryId()" (mouseover)="changeColorCategoryId()" [ngStyle]="categoryIdcolor" class="col-4" for="categoryName">CategoryName:</label>
+    <input (input)="setValue($event)" class="col-3" id="categoryName" type="text" name="categoryName">
+  </fieldset>
+  <fieldset>
+    <div [ngClass]="{active:condition}">
+    <label (mouseout)="changeColorCategoryName()" (mouseover)="changeColorCategoryName()"class="col-4" for="categoryId" [ngStyle]='categoryNamecolor'>CategoryId:   </label>
+    <input [disabled]="isDisabled"class="col-3" id="CategoryId" type="text" name="CategoryId">
+  </div>
+  </fieldset>
+  <fieldset>
+    <div [ngClass]="active">
+      <label (mouseout)="changeColorSelectType()" (mouseover)="changeColorSelectType()" class="col-4" for="type" [ngStyle]='selectTypecolor'>Select Type</label>
+      <select>
+        <optgroup id="type">
+          <option value="single">Single</option>
+          <option value="multiple">Multipe</option>
+        </optgroup>
+      </select>
+    </div>
+    </fieldset>
+    <fieldset>
+      <label class="col-4" for="dropdown"></label>
+        <div id="dropdown" class="btn-group" dropdown>
+            <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+              Button dropdown <span class="caret"></span>  </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li role="menuitem"><a class="dropdown-item" href="#">Menu1 Action</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+               <li class="divider dropdown-divider"></li>
+              <li role="menuitem" class="dropdown-item" aria-current="page" routerLink='/'>Home</li>
+              <li role="menuitem" class="dropdown-item"  routerLink='/login'>Login</li>
+              </ul>
+            </div>
+            
+    </fieldset>
+<fieldset>
+  <button  type="button" (click)="submitCategory()">Submit</button>
+</fieldset>
+</form>
+<div>
+  <ul>
+     <li *ngFor="let p of productList">
+      Product Id : {{p.id}},Product Name :{{p.productName}}
+    </li>
+    <li *ngFor="let p of squareList">
+      {{p}}
+    </li>
+  </ul>
+</div>-->
+
+<form [formGroup]="statusCreateForm" #statusNgForm='ngForm' 
+(submit)="handleSubmit($event,statusNgForm,statusCreateForm)">
+<div class="form-group">
+  <label for="file">ChooseFile</label>
+  <input type="file" id="file" (change)="handleInput($event.target.files)" >
+</div>
+<button type="submit" class="btn btn-default">submit</button>
+<button type="reset" class="btn btn-default">reset</button>
+</form>
